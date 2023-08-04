@@ -10,7 +10,7 @@ URL:            https://highs.dev/
 Source0:        %{repo_url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires:  cmake >= 3.15
-BuildRequires:  gcc
+BuildRequires:  g++
 
 %description
 HiGHS is a high performance serial and parallel solver for large scale sparse linear
