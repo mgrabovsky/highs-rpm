@@ -3,7 +3,7 @@
 Name:           highs
 Version:        1.5.4
 Release:        %{autorelease}
-Summary:        Linear optimization software
+Summary:        High-performance linear optimization software
 
 License:        MIT
 URL:            https://highs.dev/
@@ -15,6 +15,7 @@ BuildRequires:  gcc
 %description
 HiGHS is a high performance serial and parallel solver for large scale sparse linear
 optimization problems.
+
 
 %package devel
 Summary: Development files for HiGHS
