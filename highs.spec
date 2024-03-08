@@ -47,7 +47,7 @@ Development libraries and headers for the HiGHS solver.
 
 
 %files
-%license LICENSE
+%license LICENSE.txt
 %doc README.md
 %{_bindir}/highs
 %{_libdir}/libhighs.so*
