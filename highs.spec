@@ -1,7 +1,7 @@
 %global repo_url https://github.com/ERGO-Code/HiGHS
 
 Name:           highs
-Version:        1.6.0
+Version:        1.7.0
 Release:        %autorelease
 Summary:        High-performance linear optimization software
 
