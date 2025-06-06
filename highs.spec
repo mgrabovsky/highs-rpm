@@ -34,19 +34,19 @@ Development libraries and headers for the HiGHS solver.
 
 
 %build
-%if 0%{?fedora} || 0%{?rhel} >= 9
-%cmake -DFAST_BUILD=ON
-%else
+%if 0%{?rhel} && 0%{?rhel} < 9
 mkdir -p _build
 cd _build
 %cmake -DFAST_BUILD=ON ..
+%else
+%cmake -DFAST_BUILD=ON
 %endif
 
 %cmake_build
 
 
 %install
-%if ! 0%{?fedora} && 0%{?rhel} < 9
+%if 0%{?rhel} && 0%{?rhel} < 9
 cd _build
 %endif
 
@@ -54,7 +54,7 @@ cd _build
 
 
 %check
-%if ! 0%{?fedora} && 0%{?rhel} < 9
+%if 0%{?rhel} && 0%{?rhel} < 9
 cd _build
 %endif
 
