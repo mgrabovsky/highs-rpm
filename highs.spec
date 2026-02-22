@@ -37,9 +37,9 @@ Development libraries and headers for the HiGHS solver.
 %if 0%{?rhel} && 0%{?rhel} < 9
 mkdir -p _build
 cd _build
-%cmake -DFAST_BUILD=ON ..
+%cmake -DFAST_BUILD=ON -DCMAKE_INSTALL_DOCDIR=%{_docdir}/%{name} ..
 %else
-%cmake -DFAST_BUILD=ON
+%cmake -DFAST_BUILD=ON -DCMAKE_INSTALL_DOCDIR=%{_docdir}/%{name}
 %endif
 
 %cmake_build
@@ -62,8 +62,13 @@ cd _build
 
 
 %files
-%license LICENSE.txt
-%doc README.md
+%license %{_docdir}/%{name}/LICENSE.txt
+%doc %{_docdir}/%{name}/AUTHORS
+%doc %{_docdir}/%{name}/CITATION.cff
+%doc %{_docdir}/%{name}/CODE_OF_CONDUCT.md
+%doc %{_docdir}/%{name}/CONTRIBUTING.md
+%doc %{_docdir}/%{name}/FEATURES.md
+%doc %{_docdir}/%{name}/README.md
 %{_bindir}/highs
 %{_libdir}/libhighs.so*
 
@@ -82,4 +87,3 @@ cd _build
 * Wed Aug 16 2023 Matěj Grabovský <matej@mgrabovsky.net> - 1.5.4-1
 - Initial package for HiGHS upstream version 1.5.4
 %endif
-
