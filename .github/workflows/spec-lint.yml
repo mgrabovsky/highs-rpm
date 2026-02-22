@@ -1,0 +1,17 @@
+name: spec-lint
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  rpmlint:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install rpmlint
+        run: dnf --assumeyes install rpmlint
+      - name: Lint spec file
+        run: rpmlint highs.spec
